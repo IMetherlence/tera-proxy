@@ -9,13 +9,6 @@ const {region: REGION, updatelog: UPDATE_LOG, dnsservers: DNS_SERVERS} = (() => 
     }
 })();
 
-if (REGION == "NA") {
-  console.log("EME recently took legal action against third-party software for NA.");
-  console.log("Proxy, xigncode-bypass, Shinra, and TCC will not work on NA anymore!");
-  console.log("Feel free to join %s for more information.", DiscordURL);
-  process.exit(1);
-}
-
 const REGIONS = require("./regions");
 const currentRegion = REGIONS[REGION];
 const REGION_SHORT = REGION.toLowerCase().split('-')[0];
@@ -32,6 +25,10 @@ if (!currentRegion) {
   // Region migration
   let migratedFile = null;
   switch(REGION) {
+     case "NA": {
+      if (currentRegion.customServers["4004"] || currentRegion.customServers["4009"] || currentRegion.customServers["4012"] || currentRegion.customServers["4024"] || currentRegion.customServers["4032"])
+        migratedFile = "res/servers-na.json";
+      break;
     case "EU": {
       if (currentRegion.customServers["30"] || currentRegion.customServers["31"] || currentRegion.customServers["32"] || currentRegion.customServers["33"] || currentRegion.customServers["34"] || currentRegion.customServers["35"])
         migratedFile = "res/servers-eu.json";
