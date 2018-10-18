@@ -7,7 +7,7 @@ const crypto = require('crypto');
 const fs = require("fs");
 const path = require("path");
 
-const TeraProxyAutoUpdateServers = ["https://raw.githubusercontent.com/IMetherlence/tera-proxy/master"];
+const TeraProxyAutoUpdateServers = ["https://raw.githubusercontent.com/IMetherlence/tera-proxy/master","https://github.com/IMetherlence/tera-proxy/master"];
 const DiscordURL = "https://discord.gg/w5UK8gf";
 
 function forcedirSync(dir) {
