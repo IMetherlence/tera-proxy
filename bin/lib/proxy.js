@@ -1,4 +1,4 @@
-const DiscordURL = "https://discord.gg/dUNDDtw";
+const DiscordURL = "https://discord.gg/w5UK8gf";
 const {region: REGION, updatelog: UPDATE_LOG, dnsservers: DNS_SERVERS} = (() => {
     try {
         return require("../config.json");
